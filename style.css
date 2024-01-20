@@ -9,21 +9,84 @@ background-image:url('calcutorBackdrop.jpg');
 
 .outerContainer{
  position: relative;
- left: 31.5%;
+ left: 33.5%;
  top: 15%;
  height: 75%;
- width:48% ;
+ width:42% ;
  display: flex;
  flex-direction: row;
  justify-content: center;
  background-color: rgb(150, 146, 146);
- border-radius: 15px;
+ border-radius: 10px;
+ flex-wrap: wrap;
+ flex: 1 1 1 auto ;
 }
+/* Calculation Display Grid ......................... */
 .display{
     display:flex;
     height: 20%;
-    width: 60%;
+    width: 78%;
     background-color: white;
     margin-top: 45px;
     align-items:end;
+    border-radius: 8px;
+    box-shadow: 5px;
 }
+/* All Inputs Parent Div ......................... */
+.inputParent{
+    display: flex;
+    flex-direction: row;
+border: 2px solid black;
+height:65%;
+width: 78%;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+/*Parent number Input Div................... */
+.numberInput{
+    border: 2px solid white;
+    height: 99%;
+    width: 48%;
+display: flex;
+flex-direction: row-reverse;
+flex-wrap: wrap;
+flex-basis: 1 1 1 auto; 
+justify-content: space-evenly;
+
+}
+/* Number input buttons ................ */
+.numInputs{
+height: 16%;
+width:28%;
+margin-top: 25px;
+margin-left: 8px;
+border-radius: 15px;
+font-family: 'calculator', sans-serif;
+font-size: 30px;
+font-weight: 600;
+}
+/* Math operation buttons .............*/
+
+
+.mathOpInput{
+    /* margin-top: 15px; */
+    border: 2px solid white;
+    height: 99%;
+    width: 48%;
+display: flex;
+flex-direction: row-reverse;
+flex-wrap: wrap;
+flex-basis: 1 1 1 auto; 
+justify-content: space-evenly;
+align-items: flex-end;
+}
+ 
+.MathOpButtons{
+        height: 16%;
+        width:28%;
+        border-radius: 15px;
+     font-family : 'calculator', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    
+    }
