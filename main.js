@@ -1,16 +1,41 @@
-let num1 = document.querySelectorAll('.numInputsButtons');
-let numInput1 = num1.innerHTML;
+// Global Variable........................
+let numInput=[];
+let mathSign=[];
+let inputArr =[];
 
-let numParentDiv = document.querySelector('.numInput');
-num1.addEventListener('click',captureNumInputs);
-function captureNumInputs (event){
 
-    for (let i =0;i<= num1;i++){
+// Event for capturing input 
+let display = document.querySelector('.display');
+let eventParent = document.querySelector('.outerContainer');
+eventParent.addEventListener('click',captureEvent)
+function captureEvent(event){
+  let input= event.target.innerHTML;
+  inputArr.push(input);       
+  display.innerHTML= inputArr;
+  if (event.target.className = "numInputsButtons"){
+    numInput.push(event.target.innerHTML)
+    console.log(numInput);
+  }else {event.target.className = "MathOpButtons"
+    mathSign.push(event.target.innerHTML);
+    console.log(mathSign);}
+  }
 
-    if (event.target.innerHTML = true){
-        console.log(event.target.innerHTML);
-    }else {
-        console.log(false);
-    }
-    }
+
+
+  calculation()
+
+
+function calculation(input){
+
+
+
 }
+
+
+    
+
+
+
+
+
+

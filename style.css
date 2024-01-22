@@ -24,13 +24,15 @@ background-image:url('calcutorBackdrop.jpg');
 /* Calculation Display Grid ......................... */
 .display{
     display:flex;
-    height: 20%;
+    height: 15%;
     width: 78%;
     background-color: white;
     margin-top: 45px;
     align-items:end;
     border-radius: 8px;
     box-shadow: 5px;
+    font-size: 54px;
+    font-family: 'Noto Serif Old Uyghur', serif;
 }
 /* All Inputs Parent Div ......................... */
 .inputParent{
