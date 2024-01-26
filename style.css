@@ -33,6 +33,7 @@ background-image:url('calcutorBackdrop.jpg');
     box-shadow: 5px;
     font-size: 54px;
     font-family: 'Noto Serif Old Uyghur', serif;
+    flex-wrap: wrap;
 }
 /* All Inputs Parent Div ......................... */
 .inputParent{
