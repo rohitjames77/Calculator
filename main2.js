@@ -1,23 +1,22 @@
 
-let inputarr1 =[];
-let inputarr2=[];
 
 
 let display = document.querySelector('.display');
 let eventParent1 = document.querySelector('.inputParent');
-eventParent1.addEventListener('click',captureEvent1)
+eventParent1.addEventListener('click',captureEvent1,updateDisplay)
 function captureEvent1(event){
-  let eventresponse; 
+  let inputArr1 =[];
+  let inputArr2=[];
   let input = event.target.textContent;
   if (event.target.className === "MathOpButtons"){
-    inputarr2.push(input);
-    console.log(inputarr2);
+    inputArr2.push(input);
+    console.log(inputArr2);
   }else {
-    inputarr1.push(input);
-    console.log(inputarr1);
+    inputArr1.push(input);
+    console.log(inputArr1);
 
   }
-   
+updateDisplay(input);   
   }
    
 let num1;
@@ -39,10 +38,21 @@ if (opSign === "+"){
   let result = num1*num2;
   console.log(result);
 }
+
+updateDisplay()
 }
 
 
-operate(2,5,"+");
+operate();
+
+
+
+function updateDisplay(input){
+display.textContent= input;
+
+
+
+}
 
 
 
