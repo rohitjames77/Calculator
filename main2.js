@@ -11,6 +11,7 @@ function captureEvent1(event){
      let inputArr=rawInputArr.join('');
      display.textContent = inputArr;
      getSignOp(inputArr);
+     operate(input);
         }
      
     function getSignOp(inputArr) {
@@ -24,6 +25,7 @@ function captureEvent1(event){
           console.log(opSign);
           let opSignIndex = inputArr.indexOf(opSign);
           getNum1And2(inputArr,opSignIndex);
+          operate(opSign);
           break;
         }
         
@@ -35,49 +37,31 @@ function captureEvent1(event){
     let num2 = inputArr.slice(opSignIndex + 1 );
     console.log('Number 1:', num1);
     console.log('Number 2:', num2);  
-   
+    display.textContent = num2;
+    operate(num1,num2);
       }
 
      
-       
+function operate (input,num1,num2,opSign){
+if ( input === '=' && opSign === "+"){
+  let result = num1 + num2;
+  display.textContent = result;
+  console.log(result);
+}else if (input === '=' && opSign === "-"){
+  let result = num1 - num2;
+  display.textContent = result;
+  console.log(result);
+}else if (input === '=' && opSign === "/"){
+  let result = num1/num2;
+  display.textContent = result;
+  console.log(result);
+}else if (input === '=' && opSign==='*'){
+  let result = num1*num2;
+  display.textContent = result;
+  console.log(result);
+}
 
-
-
-
-      
-      
-      
-
-
-
-
-
-
-
-      
-
- 
-
-
-
-
-
-// function operate (num1,num2,opSign){
-// if (opSign === "+"){
-//   let result = num1 + num2;
-//   console.log(result);
-// }else if (opSign === "-"){
-//   let result = num1 - num2;
-//   console.log(result);
-// }else if (opSign === "/"){
-//   let result = num1/num2;
-//   console.log(result);
-// }else if (opSign==='*'){
-//   let result = num1*num2;
-//   console.log(result);
-// }
-
-// }
+}
 
 
 
