@@ -2,13 +2,6 @@ var num1;
 var num2;
 var operator;
 
-
-
-
-
-
-
-
 function add (num1,num2){
 var result = num1 + num2;
 return result;
@@ -53,3 +46,8 @@ if (operator === "+"){
 }
 }
 operate('/',6,2);
+
+var numbers = document.querySelector('.numberInput');
+numbers.addEventListener()
+ 
+
