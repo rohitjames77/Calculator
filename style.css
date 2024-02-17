@@ -71,19 +71,75 @@ font-weight: 600;
 /* Math operation buttons .............*/
 
 .operators{
+    position:relative;
     border: 4px solid white;
     height:99%;
     width: 30%;
     display:flex;
     flex-direction: column;
     align-items: flex-start;
+    flex-wrap: wrap;
+    flex: 1 1 1 auto;
+    box-sizing: content-box;
+    justify-content: space-between;
+    
+}
+
+.equals{
+height: 80px;
+width: 160px;
+font-size: 30px;
+font-weight: 600;
+margin-left: 15px;
+margin-bottom: 15px;
+border-radius: 10px;
+flex: 1 1 1 auto;
+}
+
+.mathOpInput{
+    display: flex;
+    flex-direction: column;
+    margin-top: -16px;
+    margin-left: 16px;
+    flex: 1 1 1 auto;
+}
+
+.MathOpButtons{
+    height: 62px;
+    width: 160px;
     font-size: 30px;
     font-weight: 600;
-
-
+    align-content: space-between;
+    border-radius: 10px;
+    margin-bottom: 3px;
+    flex: 1 1 1 auto;
 }
 
 
+.clear{
+    width: 80px;
+    height: 70px;
+    font-size: 32px; 
+    font-weight: 1000;
+    margin-left: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align:center;
+    flex: 1 1 1 auto;
+}
+.power{
+    width: 80px;
+    height: 70px;
+    font-size: 30px; 
+    font-weight: 600;
+    margin-left: 95px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin-top: -90px;
+    text-align:center;
+  flex: 1 1 1 auto;
+}
 
 
 
