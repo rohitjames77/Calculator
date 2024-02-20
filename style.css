@@ -28,6 +28,7 @@ background-image:url('calcutorBackdrop.jpg');
     width: 78%;
     background-color: white;
     margin-top: 45px;
+    justify-content: flex-end;
     align-items:end;
     border-radius: 8px;
     box-shadow: 5px;

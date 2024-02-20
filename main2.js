@@ -40,15 +40,15 @@ console.log(displayvalue);
         if(inputArr.includes(operatorSearchArr[i])){
           console.log('at index No '+ inputArr.indexOf(operatorSearchArr[i]));
           var opIndex = inputArr.indexOf(operatorSearchArr[i]);
-          var opSign = inputArr.slice(opIndex,opIndex+1);
-          console.log(opSign);
-          var opSignIndex = inputArr.indexOf(opSign);
+          var operator = inputArr.slice(opIndex,opIndex+1);
+          console.log(operator);
+          var opSignIndex = inputArr.indexOf(operator);
           var num1 = inputArr.slice(0, opSignIndex);
                var num2 = inputArr.slice(opSignIndex + 1 );
                console.log('Number 1:', num1);
                console.log('Number 2:', num2);  
                display.textContent = num2;
-            operate(opSign,num1,num2);
+            operate(operator,num1,num2);
         }
         
       }
