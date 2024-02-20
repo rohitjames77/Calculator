@@ -1,6 +1,7 @@
 var num1;
 var num2;
 var operator;
+let display = document.querySelector('.display');
 
 function add (num1,num2){
 var result = num1 + num2;
@@ -48,6 +49,27 @@ if (operator === "+"){
 operate('/',6,2);
 
 var numbers = document.querySelector('.numberInput');
-numbers.addEventListener()
- 
+numbers.addEventListener('click', numClickInput);
+function numClickInput (event){
+let clickInput = event.target.textContent ;
+display.textContent = clickInput; 
+}
 
+let mathSign = document.querySelector('.mathOpInput');
+mathSign.addEventListener('click', mathClickInput );
+function mathClickInput (event){
+  let mathClick  = event.target.textContent;
+  display.textContent = mathClick;
+}
+
+let ClearSign = document.querySelector('.clear');
+ClearSign.addEventListener('click',clearClickInput);
+
+function clearClickInput (event){
+  let clearClick = event.target.textContent;
+  display.textContent = clearClick;
+}
+
+
+let powerSign = document.querySelector('.power');
+powerSign.addEventListener('click', );
