@@ -40,7 +40,7 @@ ClearSign.addEventListener('click',clearClickInput);
 
 function clearClickInput (event){
   if (event.target.className = 'clear'){
-inputArray.pop();
+console.log(inputArray.pop());
 display.textContent = inputArray.join('');
 }
 }
@@ -49,6 +49,7 @@ var powerSign = document.querySelector('.power');
 powerSign.addEventListener('click', powerInput);
 function powerInput (event){
 if (event.target.className = "power"){
+  displayVal = '';
   display.textContent = 0;
 }}
 
@@ -62,20 +63,24 @@ var equalregex =  /=/;
   console.log(operatorSearch);
   var opMatch = displayVal.match(operatorPattern);
   console.log(opMatch);
- var operator = opMatch.pop();
+ var operator = opMatch[0]; 
   console.log(operator); 
   var num1str = displayVal.slice(0,operatorSearch);
-  console.log('num1',num1);
-  var num2str = displayVal.slice (operatorSearch+1);
-  console.log('num2',num2);
+  console.log('num1',num1str);
+  var num2str = displayVal.slice (operatorSearch+1,operatorSearch+2);
+  console.log('num2',num2str);
   let equalOpSearch =  displayVal.search(equalregex) ;
   console.log('equal',equalOpSearch);
   let equalOp = displayVal.match(equalregex);
   console.log('equalop',equalOp);
-  let equal = equalOp.pop();
-  console.log(equal);
-  var num1 = parseFloat(num1str);
-  var num2 = parseFloat(num2str);
+    console.log(typeof equalOp);
+    let equal = equalOp[0];
+    console.log(equal);
+
+  var num1 = Number(num1str);
+  console.log('num1',num1);
+  var num2 = Number(num2str);
+  console.log('num2',num2);
    operate(operator,num1,num2);
 }
 
@@ -84,25 +89,25 @@ function add (num1,num2){
   return result;
   }
   
-  add();
+  add(2,3);
   
   function subtract (num1,num2){
     var result = num1 - num2;
     return result;
   }
-  subtract();
+  subtract(6,2);
   
   function multiply (num1,num2){
     var result = num1 * num2;
     return result;
   }
-  multiply();
+  multiply(8,8);
   
   function divide (num1,num2){
     var result = num1 / num2;
     return result;
   }
-  divide ();
+  divide (4,2);
 
 function operate (operator,num1,num2){
   if (operator === '+'){
