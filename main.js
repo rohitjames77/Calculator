@@ -58,8 +58,10 @@ operate('+',2,4);
 // This code will iterate over each button in the numButtons array, and for each button, it will attach a click event listener.
 numButtons.forEach(function(button){
   button.addEventListener('click',function(event)
-  {display.textContent= event.target.textContent  ;
-    console.log('Clicked   input:', clickInput);
+  {let eventInput =event.target.textContent;
+    console.log(clickInput);
+    clickInput += eventInput  ;
+    console.log('Clicked   input:', eventInput);
   })
 })
 
@@ -74,8 +76,12 @@ mathButtons.forEach(function (button){
 })
 
 clear.addEventListener('click',function(){
-  
+display.textContent = '';
+display.textContent = '0';
+});
+
+power.addEventListener('click',function (){
+  display.textContent = '';
+  display.textContent = '0';
 })
-
-
 
