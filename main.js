@@ -1,11 +1,10 @@
 let display = document.querySelector(".display");
 let numButtons = document.querySelectorAll(".numInputsButtons");
-console.log(numButtons);
+;
 let clear = document.querySelector(".clear");
 let power = document.querySelector(".power");
 let equal = document.querySelector(".equals");
 let mathButtons = document.querySelectorAll(".MathOpButtons");
-let clickInput = display.textContent;
 let num1;
 let num2;
 let operator;
@@ -58,11 +57,8 @@ operate('+',2,4);
 // This code will iterate over each button in the numButtons array, and for each button, it will attach a click event listener.
 numButtons.forEach(function(button){
   button.addEventListener('click',function(event)
-  {let eventInput =event.target.textContent;
-    console.log(clickInput);
-    clickInput += eventInput  ;
-    console.log('Clicked   input:', eventInput);
-  })
+  {  let numInput = event.target.textContent; 
+  appendDisplay(numInput)  })
 })
 
 
@@ -70,10 +66,16 @@ numButtons.forEach(function(button){
 
 mathButtons.forEach(function (button){
   button.addEventListener('click',function(event){
-    display.textContent= event.target.textContent ;
-    console.log('Clicked   input:',event.target.textContent);
-  })
+    let mathInput = event.target.textContent;
+  appendDisplay(mathInput)})
 })
+
+function appendDisplay (numInput,mathInput,equalInput){
+  let clickInput = display.textContent;
+  
+
+}
+
 
 clear.addEventListener('click',function(){
 display.textContent = '';
@@ -84,4 +86,8 @@ power.addEventListener('click',function (){
   display.textContent = '';
   display.textContent = '0';
 })
-
+// This code will attach a click event listener  to equal button...............
+equal.addEventListener('click',function (event){
+ let equalInput = event.target.textContent;
+     appendDisplay(equalInput);
+})
