@@ -10,6 +10,7 @@ let num2;
 let operator;
 
 
+
 function add(num1, num2) {
   var result = num1 + num2;
   return result;
@@ -57,8 +58,9 @@ operate('+',2,4);
 // This code will iterate over each button in the numButtons array, and for each button, it will attach a click event listener.
 numButtons.forEach(function(button){
   button.addEventListener('click',function(event)
-  {  let numInput = event.target.textContent; 
-  appendDisplay(numInput)  })
+  {  display.textContent += event.target.textContent; 
+   getNum1();
+    })
 })
 
 
@@ -66,28 +68,40 @@ numButtons.forEach(function(button){
 
 mathButtons.forEach(function (button){
   button.addEventListener('click',function(event){
-    let mathInput = event.target.textContent;
-  appendDisplay(mathInput)})
+   let operator = event.target.textContent;
+    display.textContent += event.target.textContent;
+   getNum1();
+  })
 })
 
-function appendDisplay (numInput,mathInput,equalInput){
-  let clickInput = display.textContent;
-  
-
-}
 
 
 clear.addEventListener('click',function(){
 display.textContent = '';
-display.textContent = '0';
+display.textContent = '0'; getNum1();
 });
 
 power.addEventListener('click',function (){
   display.textContent = '';
   display.textContent = '0';
+ getNum1();
 })
 // This code will attach a click event listener  to equal button...............
 equal.addEventListener('click',function (event){
  let equalInput = event.target.textContent;
-     appendDisplay(equalInput);
-})
+    display.textContent += equalInput;
+   getNum1();
+  })
+
+function getNum1 (){
+  let displayValue = display.textContent;
+  let operatorIndex = displayValue.indexOf('+', '-', 'x', '/');
+  console.log(operatorIndex);
+if (displayValue.includes('+', '-', 'x', '/')){
+  displayValue.slice(0,operatorIndex);
+}
+ 
+}
+
+
+
