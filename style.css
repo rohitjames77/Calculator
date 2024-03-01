@@ -69,6 +69,19 @@ font-family: 'calculator', sans-serif;
 font-size: 30px;
 font-weight: 600;
 }
+
+
+
+.decimal{
+    height: 16%;
+width:28%;
+margin-top: 25px;
+margin-left: 8px;
+border-radius: 15px;
+font-family: 'calculator', sans-serif;
+font-size: 30px;
+font-weight: 600;
+}
 /* Math operation buttons .............*/
 
 .operators{
