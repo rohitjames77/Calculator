@@ -6,6 +6,7 @@ let equal = document.querySelector(".equals");
 let mathButtons = document.querySelectorAll(".MathOpButtons");
 let decimal = document.querySelector('.decimal');
 let decCount = 0;
+let previousResult= null;
 
 
 
@@ -42,9 +43,7 @@ function divide(num1, num2) {
 numButtons.forEach(function(button){
   button.addEventListener('click',function(event)
   {  display.textContent += event.target.textContent; 
-    let displayValue = display.textContent;
-    sortValues(displayValue);
-    
+       
     })
 })
 
@@ -54,9 +53,8 @@ numButtons.forEach(function(button){
 mathButtons.forEach(function (button){
   button.addEventListener('click',function(event){
     display.textContent += event.target.textContent;
-    let displayValue = display.textContent;
-    sortValues(displayValue);
-  })
+   
+    })
 })
 
 clear.addEventListener('click',function(){
@@ -78,7 +76,8 @@ power.addEventListener('click',function (){
 equal.addEventListener('click',function (event){
  let equalInput = event.target.textContent;
     display.textContent += equalInput;
-   
+    let displayValue = display.textContent;
+    sortValues(displayValue);  
    
   })
 // This code will attach a click event listener  to decimal button...............
@@ -87,8 +86,6 @@ decimal.addEventListener('click', function (event){
  display.textContent += event.target.textContent;
  decCount++;
  console.log('count',decCount);
- let displayValue = display.textContent;
- sortValues(displayValue)
 })
 
 function sortValues(displayValue){
@@ -106,46 +103,39 @@ for (let i = 0 ; i < displayValue.length; i++){
   console.log( typeof operator); 
   convertType (number1,number2,operator);
   }
+  
 }
 
 }
 
 function convertType (number1,number2,operator){
+  console.log(typeof operator);
   let num1 = parseFloat(number1);
   console.log('num1', num1);
   let num2 = parseFloat(number2);
   console.log('num2',num2);
-  // operate (operator,num1,num2);
+  operate (operator,num1,num2);
+  }
 
-  // if (operator === '+'){
-  //   // let result = add(num1,num2);
-  //   let result = num1 + num2;
-  //   console.log(result);
-  //   display.textContent =  result;
-  // }
 
+function operate (operator,num1,num2){
+  if (operator === '+'){
+    let result = add(num1,num2);
+    console.log(result);
+    display.textContent =  result;
+  } else if (operator === '-'){
+    let result = subtract(num1,num2);
+    console.log(result);
+    display.textContent =  result;
+  } else if (operator === 'x'){
+    let result = multiply(num1,num2);
+    console.log(result);
+    display.textContent =  result;
+  } else if (operator === '/'){
+    let result = divide(num1,num2);
+    console.log(result);
+    display.textContent =  result;
+  }
+
+  previousResult = result;
 }
-
-// function callOperate (){
-
-// }
-
-// function operate (operator,num1,num2){
-//   if (operator === '+'){
-//     let result = add(num1,num2);
-//     console.log(result);
-//     display.textContent =  result;
-//   } else if (operator === '-'){
-//     let result = subtract(num1,num2);
-//     console.log(result);
-//     display.textContent =  result;
-//   } else if (operator === 'x'){
-//     let result = multiply(num1,num2);
-//     console.log(result);
-//     display.textContent =  result;
-//   } else if (operator === '/'){
-//     let result = divide(num1,num2);
-//     console.log(result);
-//     display.textContent =  result;
-//   }
-// }
