@@ -78,7 +78,6 @@ equal.addEventListener('click',function (event){
     display.textContent += equalInput;
     let displayValue = display.textContent;
     sortValues(displayValue);  
-   
   })
 // This code will attach a click event listener  to decimal button...............
 
@@ -135,7 +134,11 @@ function operate (operator,num1,num2){
     let result = divide(num1,num2);
     console.log(result);
     display.textContent =  result;
+
+
   }
 
-  previousResult = result;
+ 
 }
+
+
