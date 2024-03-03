@@ -20,6 +20,7 @@ background-image:url('calcutorBackdrop.jpg');
  border-radius: 10px;
  flex-wrap: wrap;
  flex: 1 1 1 auto ;
+ box-shadow: 10px 10px black;
 }
 /* Calculation Display Grid ......................... */
 .display{
@@ -54,7 +55,7 @@ justify-content: space-between;
 display: flex;
 flex-direction: row-reverse;
 flex-wrap: wrap;
-flex-basis: 1 1 1 auto; 
+flex: 1 1 1 auto; 
 justify-content: space-evenly;
 
 }
@@ -68,6 +69,7 @@ border-radius: 15px;
 font-family: 'calculator', sans-serif;
 font-size: 30px;
 font-weight: 600;
+flex: 1 1 1 auto;
 }
 
 
@@ -81,6 +83,7 @@ border-radius: 15px;
 font-family: 'calculator', sans-serif;
 font-size: 30px;
 font-weight: 600;
+flex :1 1 1 auto;
 }
 /* Math operation buttons .............*/
 
